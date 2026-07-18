@@ -1,0 +1,38 @@
+:root{--bg:#0d0d0f;--card:#18181b;--card2:#242428;--line:#33333a;--text:#f4f4f5;--muted:#a1a1aa;--red:#e11d2e;--green:#16a34a;--danger:#7f1d1d}
+    *{box-sizing:border-box}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:Arial,Helvetica,sans-serif}
+    button,select,input{font:inherit}
+    .app{max-width:1250px;margin:0 auto;padding:20px}
+    h1{margin:0 0 6px;font-size:30px}.red{color:var(--red)}
+    .subtitle{color:var(--muted);margin-bottom:20px}
+    .toolbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+    .filters{display:flex;gap:10px;flex-wrap:wrap}
+    select,.btn{background:var(--card);color:var(--text);border:1px solid var(--line);border-radius:12px;padding:12px 14px;min-height:46px}
+    .btn{cursor:pointer;font-weight:700}.btn-red{background:var(--red);border-color:var(--red)}.btn-green{background:var(--green);border-color:var(--green)}
+    .count{color:var(--muted);font-weight:700}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:14px}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:.2s}
+    .card.completed{opacity:.72;order:99}
+    .card.open{grid-column:span 2}
+    .head{width:100%;border:0;background:transparent;color:inherit;text-align:left;padding:18px;display:flex;justify-content:space-between;gap:14px;cursor:pointer}
+    .name{font-size:23px;font-weight:800}.workout{color:var(--muted);margin-top:4px}
+    .summary{min-width:145px;text-align:right}.summary-line{font-size:13px;color:var(--muted);margin-bottom:7px}
+    .bar{height:10px;background:#0b0b0c;border-radius:999px;overflow:hidden}.bar span{display:block;height:100%;background:var(--red);width:0%}
+    .body{display:none;border-top:1px solid var(--line)}.card.open .body{display:block}
+    .list{padding:8px 14px}
+    .exercise{display:grid;grid-template-columns:48px 1fr auto;gap:12px;align-items:center;padding:14px 4px;border-bottom:1px solid #2b2b31}
+    .check{width:40px;height:40px;border:2px solid #4a4a54;border-radius:12px;background:#111114;color:#fff;font-size:22px;font-weight:900;cursor:pointer}
+    .exercise.done .check{background:var(--green);border-color:var(--green)}
+    .exercise.done .ex-name{text-decoration:line-through;color:#7f7f88}
+    .ex-name{font-size:18px;font-weight:700}.ex-meta{font-size:14px;color:var(--muted);margin-top:5px}.tag{font-size:12px;padding:6px 8px;border-radius:999px;background:#2a2a31;color:#ddd;white-space:nowrap}
+    .student-day{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 18px 4px}.student-day label{font-size:14px;color:var(--muted);font-weight:700}.student-day select{min-width:190px;background:var(--card2)}
+    .actions{display:flex;gap:10px;flex-wrap:wrap;padding:16px}
+    .status{margin:0 16px 16px;padding:12px;border-radius:12px;background:#102417;color:#b7f7c8;display:none}.status.show{display:block}
+    .overlay{position:fixed;inset:0;background:rgba(0,0,0,.65);display:none;z-index:20}.overlay.show{display:block}
+    .drawer{position:fixed;top:0;right:0;width:min(560px,100%);height:100%;background:#121215;border-left:1px solid var(--line);z-index:30;transform:translateX(100%);transition:.2s;overflow:auto}.drawer.show{transform:translateX(0)}
+    .drawer-head{position:sticky;top:0;background:#121215;padding:16px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;z-index:2}.drawer-head h2{margin:0}.close{background:var(--card2);color:#fff;border:1px solid var(--line);border-radius:10px;width:42px;height:42px;font-size:22px;cursor:pointer}
+    .drawer-body{padding:16px}.edit-item{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;margin-bottom:12px}.edit-grid{display:grid;grid-template-columns:1fr 110px 130px;gap:8px}.edit-item input,.edit-item select{width:100%;background:#111114;color:#fff;border:1px solid var(--line);border-radius:10px;padding:10px}.remove{margin-top:8px;background:#3a171b;color:#ffb4bc;border:1px solid #6b2028;border-radius:10px;padding:9px 12px;cursor:pointer}
+    .drawer-footer{position:sticky;bottom:0;background:#121215;padding:14px 16px;border-top:1px solid var(--line);display:flex;gap:10px}.drawer-footer .btn{flex:1}
+    .empty{grid-column:1/-1;padding:35px;text-align:center;color:var(--muted);border:1px dashed var(--line);border-radius:18px;background:var(--card)}
+    .manage-form{display:grid;gap:14px}.field{display:grid;gap:7px}.field label{font-size:13px;color:var(--muted);font-weight:700}.field input,.field select{width:100%;background:#111114;color:#fff;border:1px solid var(--line);border-radius:10px;padding:12px}.danger-zone{margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}.btn-danger{background:#3a171b;color:#ffb4bc;border-color:#6b2028}.workout-title{margin:0 0 14px}.workout-title input{width:100%;background:#111114;color:#fff;border:1px solid var(--line);border-radius:10px;padding:12px}.small-note{font-size:13px;color:var(--muted);line-height:1.45}
+    @media(max-width:800px){.app{padding:12px}.card.open{grid-column:span 1}.grid{grid-template-columns:1fr}.exercise{grid-template-columns:48px 1fr}.tag{grid-column:2;justify-self:start}.edit-grid{grid-template-columns:1fr}.actions .btn{flex:1}.summary{min-width:120px}}
